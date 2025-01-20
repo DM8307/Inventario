@@ -106,12 +106,116 @@ namespace Inventario.Views
 
         private void button1agregarproductos_Click(object sender, EventArgs e)
         {
+            // Verificar si los campos no están vacíos
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                MessageBox.Show("Por favor ingresa el nombre y la descripción de la categoría.");
+                return;
+            }
 
+            // Crear una nueva instancia de Categoria
+            var nuevaCategoria = new Categoria
+            {
+                Nombre = txtNombre.Text,
+                Descripcion = txtDescripcion.Text
+            };
+
+            // Agregar la nueva categoría al contexto
+            _context.Categorias.Add(nuevaCategoria);
+
+            // Guardar los cambios en la base de datos
+            _context.SaveChanges();
+
+            // Limpiar los campos de texto
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+
+            // Recargar las categorías en el DataGridView
+            CargarCategorias();
+
+            MessageBox.Show("Categoría agregada correctamente.");
         }
 
         private void Categorias_FormClosed(object sender, FormClosedEventArgs e)
         {
             _context.Dispose();
+        }
+
+        private void button2eliminarproductos_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila
+            if (dtgvCategorias.CurrentRow != null)
+            {
+                // Obtener el ID de la categoría seleccionada
+                int id = (int)dtgvCategorias.CurrentRow.Cells["ID"].Value;
+
+                // Buscar la categoría en la base de datos
+                var categoria = _context.Categorias.Find(id);
+
+                // Verificar si la categoría existe
+                if (categoria != null)
+                {
+                    // Eliminar la categoría
+                    _context.Categorias.Remove(categoria);
+                    _context.SaveChanges();
+
+                    // Recargar las categorías en el DataGridView
+                    CargarCategorias();
+
+                    MessageBox.Show("Categoría eliminada correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Categoría no encontrada.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una categoría para eliminar.");
+            }
+        }
+
+        private void button3editarproductos_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila
+            if (dtgvCategorias.CurrentRow != null)
+            {
+                // Obtener el ID de la categoría seleccionada
+                int id = (int)dtgvCategorias.CurrentRow.Cells["ID"].Value;
+
+                // Buscar la categoría en la base de datos
+                var categoria = _context.Categorias.Find(id);
+
+                // Verificar si la categoría existe
+                if (categoria != null)
+                {
+                
+
+                    // Permitir que el usuario edite y guarde los cambios
+                    if (MessageBox.Show("¿Deseas editar esta categoría?", "Editar Categoría", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Modificar la categoría con los nuevos valores
+                        categoria.Nombre = txtNombre.Text;
+                        categoria.Descripcion = txtDescripcion.Text;
+
+                        // Guardar los cambios
+                        _context.SaveChanges();
+
+                        // Recargar las categorías en el DataGridView
+                        CargarCategorias();
+
+                        MessageBox.Show("Categoría editada correctamente.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Categoría no encontrada.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una categoría para editar.");
+            }
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             dtgvCategorias = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descripcionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             productosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -55,13 +56,19 @@
             // 
             dtgvCategorias.AutoGenerateColumns = false;
             dtgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvCategorias.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn, productosDataGridViewTextBoxColumn });
+            dtgvCategorias.Columns.AddRange(new DataGridViewColumn[] { ID, nombreDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn, productosDataGridViewTextBoxColumn });
             dtgvCategorias.DataSource = categoriaBindingSource1;
-            dtgvCategorias.Location = new Point(126, 75);
+            dtgvCategorias.Location = new Point(68, 75);
             dtgvCategorias.Name = "dtgvCategorias";
-            dtgvCategorias.Size = new Size(343, 297);
+            dtgvCategorias.Size = new Size(444, 297);
             dtgvCategorias.TabIndex = 4;
             dtgvCategorias.CellContentClick += dtgvCategorias_CellContentClick;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -160,6 +167,7 @@
             button3editarproductos.TabIndex = 19;
             button3editarproductos.Text = "Editar";
             button3editarproductos.UseVisualStyleBackColor = true;
+            button3editarproductos.Click += button3editarproductos_Click;
             // 
             // button2eliminarproductos
             // 
@@ -170,6 +178,7 @@
             button2eliminarproductos.TabIndex = 18;
             button2eliminarproductos.Text = "Eliminar";
             button2eliminarproductos.UseVisualStyleBackColor = true;
+            button2eliminarproductos.Click += button2eliminarproductos_Click;
             // 
             // button1agregarproductos
             // 
@@ -227,9 +236,6 @@
         private TextBox txtNombre;
         private TextBox txtDescripcion;
         private Label lblDescripcion;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn productosDataGridViewTextBoxColumn;
         private Label lblNombre;
         private TextBox txtProductos;
         private Label lblProductos;
@@ -238,5 +244,9 @@
         private Button button2eliminarproductos;
         private Button button1agregarproductos;
         private Button button4Volver_a_inicio;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn productosDataGridViewTextBoxColumn;
     }
 }
