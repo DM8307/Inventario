@@ -6,6 +6,7 @@
         private static Categorias? categoriasForm;
         private static Productos? productosForm;
         private static Proveedores? proveedoresForm;
+        private static Reportes? reportesForm;
         public Index()
         {
             InitializeComponent();
@@ -61,7 +62,10 @@
         {
             //boton llevara a reportes
             // Ejemplo de transición a la vista de Reportes
-            MessageBox.Show("El formulario de Reportes aún no está implementado.");
+            reportesForm = new Reportes();
+            reportesForm.FormClosed += (s, args) => this.Show();
+            this.Hide();
+            reportesForm.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)

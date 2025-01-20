@@ -25,23 +25,23 @@ namespace Inventario.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Desvincular la data
-            dtgvCategorias.DataSource = null;
+            ////Desvincular la data
+            //dtgvCategorias.DataSource = null;
 
-            // agregar renglon
-            int n = dtgvCategorias.Rows.Add();
+            //// agregar renglon
+            //int n = dtgvCategorias.Rows.Add();
 
-            //Colocar informacion
-            dtgvCategorias.Rows.Add(txtNombre.Text, txtDescripcion.Text, txtProductos.Text);
+            ////Colocar informacion
+            //dtgvCategorias.Rows.Add(txtNombre.Text, txtDescripcion.Text, txtProductos.Text);
 
-            //Limpiar txt
-            txtNombre.Text = "";
-            txtDescripcion.Text = "";
-            txtProductos.Text = "";
+            ////Limpiar txt
+            ////txtNombre.Text = "";
+            //txtDescripcion.Text = "";
+            //txtProductos.Text = "";
 
 
-            //Vincular la data
-            dtgvCategorias.DataSource = categoriaBindingSource1;
+            ////Vincular la data
+            //dtgvCategorias.DataSource = categoriaBindingSource1;
         }
 
         private void button2_Click(object sender, EventArgs e)
