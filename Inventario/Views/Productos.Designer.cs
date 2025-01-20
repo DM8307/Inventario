@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             codigoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -41,7 +42,6 @@
             inventarioContextBindingSource = new BindingSource(components);
             button1agregarproductos = new Button();
             button2eliminarproductos = new Button();
-            button3editarproductos = new Button();
             button4Volver_a_inicio = new Button();
             label1 = new Label();
             lblNombre = new Label();
@@ -52,10 +52,11 @@
             lblPrecio = new Label();
             txtExistencia = new TextBox();
             lblExistencia = new Label();
-            textBox1 = new TextBox();
+            txtCategoria = new TextBox();
             lblCategoria = new Label();
-            textBox2 = new TextBox();
+            txtProveedor = new TextBox();
             lblProveedor = new Label();
+            button3editarproductos = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)inventarioContextBindingSource1).BeginInit();
@@ -67,13 +68,19 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, codigoDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn, existenciaDataGridViewTextBoxColumn, categoriaDataGridViewTextBoxColumn, proveedorDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, nombreDataGridViewTextBoxColumn, codigoDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn, existenciaDataGridViewTextBoxColumn, categoriaDataGridViewTextBoxColumn, proveedorDataGridViewTextBoxColumn });
             dataGridView1.DataSource = productoBindingSource;
             dataGridView1.Location = new Point(28, 52);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(644, 303);
+            dataGridView1.Size = new Size(643, 303);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -144,17 +151,6 @@
             button2eliminarproductos.Text = "Eliminar";
             button2eliminarproductos.UseVisualStyleBackColor = true;
             button2eliminarproductos.Click += button2eliminarproductos_Click;
-            // 
-            // button3editarproductos
-            // 
-            button3editarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3editarproductos.Location = new Point(356, 375);
-            button3editarproductos.Name = "button3editarproductos";
-            button3editarproductos.Size = new Size(158, 70);
-            button3editarproductos.TabIndex = 3;
-            button3editarproductos.Text = "Editar";
-            button3editarproductos.UseVisualStyleBackColor = true;
-            button3editarproductos.Click += button3editarproductos_Click;
             // 
             // button4Volver_a_inicio
             // 
@@ -243,12 +239,12 @@
             lblExistencia.TabIndex = 12;
             lblExistencia.Text = "Existencia";
             // 
-            // textBox1
+            // txtCategoria
             // 
-            textBox1.Location = new Point(689, 276);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(137, 23);
-            textBox1.TabIndex = 15;
+            txtCategoria.Location = new Point(689, 276);
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.Size = new Size(137, 23);
+            txtCategoria.TabIndex = 15;
             // 
             // lblCategoria
             // 
@@ -260,12 +256,12 @@
             lblCategoria.Text = "Categoria";
             lblCategoria.Click += label2_Click_1;
             // 
-            // textBox2
+            // txtProveedor
             // 
-            textBox2.Location = new Point(689, 332);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(137, 23);
-            textBox2.TabIndex = 17;
+            txtProveedor.Location = new Point(689, 332);
+            txtProveedor.Name = "txtProveedor";
+            txtProveedor.Size = new Size(137, 23);
+            txtProveedor.TabIndex = 17;
             // 
             // lblProveedor
             // 
@@ -276,14 +272,26 @@
             lblProveedor.TabIndex = 16;
             lblProveedor.Text = "Proveedor";
             // 
+            // button3editarproductos
+            // 
+            button3editarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3editarproductos.Location = new Point(356, 375);
+            button3editarproductos.Name = "button3editarproductos";
+            button3editarproductos.Size = new Size(158, 70);
+            button3editarproductos.TabIndex = 18;
+            button3editarproductos.Text = "Editar";
+            button3editarproductos.UseVisualStyleBackColor = true;
+            button3editarproductos.Click += button1_Click;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 457);
-            Controls.Add(textBox2);
+            Controls.Add(button3editarproductos);
+            Controls.Add(txtProveedor);
             Controls.Add(lblProveedor);
-            Controls.Add(textBox1);
+            Controls.Add(txtCategoria);
             Controls.Add(lblCategoria);
             Controls.Add(txtExistencia);
             Controls.Add(lblExistencia);
@@ -295,7 +303,6 @@
             Controls.Add(lblNombre);
             Controls.Add(label1);
             Controls.Add(button4Volver_a_inicio);
-            Controls.Add(button3editarproductos);
             Controls.Add(button2eliminarproductos);
             Controls.Add(button1agregarproductos);
             Controls.Add(dataGridView1);
@@ -316,16 +323,9 @@
         private BindingSource inventarioContextBindingSource;
         private Button button1agregarproductos;
         private Button button2eliminarproductos;
-        private Button button3editarproductos;
         private Button button4Volver_a_inicio;
         private Label label1;
         private BindingSource inventarioContextBindingSource1;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn existenciaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
         private Label lblNombre;
         private TextBox txtNombre;
         private TextBox txtCodigo;
@@ -334,9 +334,17 @@
         private Label lblPrecio;
         private TextBox txtExistencia;
         private Label lblExistencia;
-        private TextBox textBox1;
+        private TextBox txtCategoria;
         private Label lblCategoria;
-        private TextBox textBox2;
+        private TextBox txtProveedor;
         private Label lblProveedor;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn existenciaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
+        private Button button3editarproductos;
     }
 }
