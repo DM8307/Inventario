@@ -52,6 +52,7 @@
             lblContacto = new Label();
             txtNombreEmpresa = new TextBox();
             lblNombreEmpresa = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proveedorBindingSource).BeginInit();
             SuspendLayout();
@@ -80,7 +81,7 @@
             // button3editarproductos
             // 
             button3editarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3editarproductos.Location = new Point(388, 374);
+            button3editarproductos.Location = new Point(403, 374);
             button3editarproductos.Name = "button3editarproductos";
             button3editarproductos.Size = new Size(158, 70);
             button3editarproductos.TabIndex = 8;
@@ -91,7 +92,7 @@
             // button2eliminarproductos
             // 
             button2eliminarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2eliminarproductos.Location = new Point(205, 374);
+            button2eliminarproductos.Location = new Point(220, 374);
             button2eliminarproductos.Name = "button2eliminarproductos";
             button2eliminarproductos.Size = new Size(158, 70);
             button2eliminarproductos.TabIndex = 7;
@@ -102,7 +103,7 @@
             // button1agregarproductos
             // 
             button1agregarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1agregarproductos.Location = new Point(14, 374);
+            button1agregarproductos.Location = new Point(29, 374);
             button1agregarproductos.Name = "button1agregarproductos";
             button1agregarproductos.Size = new Size(158, 70);
             button1agregarproductos.TabIndex = 6;
@@ -117,7 +118,7 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ID, nombreEmpresaDataGridViewTextBoxColumn, contactoDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, productosDataGridViewTextBoxColumn });
             dataGridView2.DataSource = proveedorBindingSource;
-            dataGridView2.Location = new Point(12, 78);
+            dataGridView2.Location = new Point(23, 99);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(543, 269);
             dataGridView2.TabIndex = 11;
@@ -244,11 +245,23 @@
             lblNombreEmpresa.TabIndex = 18;
             lblNombreEmpresa.Text = "Nombre Empresa";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(14, 60);
+            label2.Name = "label2";
+            label2.Size = new Size(576, 21);
+            label2.TabIndex = 28;
+            label2.Text = "(La tabla de Proveedores sera visible cuando se agregue un nuevo proveedor)";
+            label2.Click += label2_Click;
+            // 
             // Proveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 456);
+            Controls.Add(label2);
             Controls.Add(txtProductos);
             Controls.Add(lblProductos);
             Controls.Add(txtDireccion);
@@ -298,5 +311,6 @@
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn productosDataGridViewTextBoxColumn;
+        private Label label2;
     }
 }
