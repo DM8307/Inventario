@@ -16,10 +16,5 @@ namespace Inventario.Views
         {
             InitializeComponent();
         }
-
-        private void EditarProductoForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

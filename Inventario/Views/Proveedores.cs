@@ -42,12 +42,6 @@ namespace Inventario.Views
 
                 // Asigna los datos al DataGridView
                 dataGridView2.DataSource = proveedores;
-
-                // Verifica si se cargaron datos
-                if (proveedores.Count == 0)
-                {
-                    MessageBox.Show("No se encontraron proveedores.");
-                }
             }
             catch (Exception ex)
             {
@@ -69,7 +63,12 @@ namespace Inventario.Views
         private void button1agregarproductos_Click(object sender, EventArgs e)
         {
             //boton para agregar proveedores
-            
+            var agregarProveedorForm = new AgregarProveedorForm();
+            if (agregarProveedorForm.ShowDialog() == DialogResult.OK)
+            {
+                // Recargar la lista de proveedores después de agregar uno nuevo
+                CargarProveedores();
+            }
         }
 
         private void button2eliminarproductos_Click(object sender, EventArgs e)
@@ -84,7 +83,7 @@ namespace Inventario.Views
                 {
                     _context.Proveedores.Remove(proveedor);
                     _context.SaveChanges();
-                    CargarProveedores(); // Recargar los proveedores después de eliminar uno
+                    CargarProveedores(); // Recargar la lista de proveedores después de eliminar
                 }
                 else
                 {
@@ -95,21 +94,37 @@ namespace Inventario.Views
             {
                 MessageBox.Show("Por favor, selecciona un proveedor para eliminar.");
             }
-                   
         }
 
         private void button3editarproductos_Click(object sender, EventArgs e)
         {
             //boton para editar proveedores
-            
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                int idProveedor = (int)dataGridView2.SelectedRows[0].Cells["ID"].Value;
+                var proveedor = _context.Proveedores.Find(idProveedor);
+
+                if (proveedor != null)
+                {
+                    var editarProveedorForm = new EditarProveedorForm();
+                    if (editarProveedorForm.ShowDialog() == DialogResult.OK)
+                    {
+                        _context.SaveChanges(); // Guardar los cambios en la base de datos
+                        CargarProveedores(); // Recargar la lista de proveedores después de editar
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor no encontrado.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un proveedor para editar.");
+            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }
