@@ -35,6 +35,10 @@
             label1 = new Label();
             label2 = new Label();
             button2Producctos = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
             SuspendLayout();
             // 
             // button1catergorias
@@ -103,9 +107,9 @@
             label2.BackColor = SystemColors.Window;
             label2.BorderStyle = BorderStyle.Fixed3D;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(157, 115);
+            label2.Location = new Point(157, 98);
             label2.Name = "label2";
-            label2.Size = new Size(600, 26);
+            label2.Size = new Size(600, 43);
             label2.TabIndex = 11;
             label2.Text = "Seleccione una de las opciones para entrar al modulo que desea visitar.";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -122,11 +126,54 @@
             button2Producctos.UseVisualStyleBackColor = true;
             button2Producctos.Click += button2Producctos_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(334, 407);
+            label3.Name = "label3";
+            label3.Size = new Size(218, 15);
+            label3.TabIndex = 13;
+            label3.Text = "Reportes aun no esta implementado tba";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(88, 258);
+            label4.Name = "label4";
+            label4.Size = new Size(115, 17);
+            label4.TabIndex = 14;
+            label4.Text = "Lleva a Categorías";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(396, 260);
+            label5.Name = "label5";
+            label5.Size = new Size(111, 17);
+            label5.TabIndex = 15;
+            label5.Text = "Lleva a Productos";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(648, 258);
+            label6.Name = "label6";
+            label6.Size = new Size(127, 17);
+            label6.TabIndex = 16;
+            label6.Text = "Lleva a proveedores";
+            // 
             // Index
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(933, 519);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(button2Producctos);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -139,6 +186,7 @@
             Text = "Menu Principal";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -149,5 +197,9 @@
         private Label label1;
         private Label label2;
         private Button button2Producctos;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
     }
 }
