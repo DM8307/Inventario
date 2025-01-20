@@ -16,5 +16,10 @@ namespace Inventario.Views
         {
             InitializeComponent();
         }
+
+        private void Categorias_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
