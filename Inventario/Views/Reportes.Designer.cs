@@ -50,9 +50,9 @@
             dataGridViewReportes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewReportes.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn, productosDataGridViewTextBoxColumn });
             dataGridViewReportes.DataSource = categoriaBindingSource;
-            dataGridViewReportes.Location = new Point(129, 94);
+            dataGridViewReportes.Location = new Point(164, 103);
             dataGridViewReportes.Name = "dataGridViewReportes";
-            dataGridViewReportes.Size = new Size(522, 150);
+            dataGridViewReportes.Size = new Size(444, 150);
             dataGridViewReportes.TabIndex = 0;
             dataGridViewReportes.CellContentClick += dataGridViewReportes_CellContentClick;
             // 

@@ -35,6 +35,7 @@
             button2eliminarproductos = new Button();
             button1agregarproductos = new Button();
             dataGridView2 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
             nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             contactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -114,13 +115,19 @@
             dataGridView2.AllowUserToOrderColumns = true;
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { nombreEmpresaDataGridViewTextBoxColumn, contactoDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, productosDataGridViewTextBoxColumn });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ID, nombreEmpresaDataGridViewTextBoxColumn, contactoDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, productosDataGridViewTextBoxColumn });
             dataGridView2.DataSource = proveedorBindingSource;
-            dataGridView2.Location = new Point(14, 78);
+            dataGridView2.Location = new Point(12, 78);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(543, 269);
             dataGridView2.TabIndex = 11;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
             // 
             // nombreEmpresaDataGridViewTextBoxColumn
             // 
@@ -226,6 +233,7 @@
             txtNombreEmpresa.Name = "txtNombreEmpresa";
             txtNombreEmpresa.Size = new Size(137, 23);
             txtNombreEmpresa.TabIndex = 19;
+            txtNombreEmpresa.TextChanged += txtNombreEmpresa_TextChanged;
             // 
             // lblNombreEmpresa
             // 
@@ -274,11 +282,6 @@
         private Button button1agregarproductos;
         private DataGridView dataGridView2;
         private BindingSource proveedorBindingSource;
-        private DataGridViewTextBoxColumn nombreEmpresaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn contactoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn productosDataGridViewTextBoxColumn;
         private TextBox txtProductos;
         private Label lblProductos;
         private TextBox txtDireccion;
@@ -289,5 +292,11 @@
         private Label lblContacto;
         private TextBox txtNombreEmpresa;
         private Label lblNombreEmpresa;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn nombreEmpresaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn contactoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn productosDataGridViewTextBoxColumn;
     }
 }

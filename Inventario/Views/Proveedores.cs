@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Inventario.Context;
+using Inventario.Models;
 
 namespace Inventario.Views
 {
@@ -62,12 +63,48 @@ namespace Inventario.Views
 
         private void button1agregarproductos_Click(object sender, EventArgs e)
         {
-            //boton para agregar proveedores
-            var agregarProveedorForm = new AgregarProveedorForm();
-            if (agregarProveedorForm.ShowDialog() == DialogResult.OK)
+            // Validar que los campos no estén vacíos
+            if (string.IsNullOrWhiteSpace(txtNombreEmpresa.Text) ||
+                string.IsNullOrWhiteSpace(txtContacto.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
-                // Recargar la lista de proveedores después de agregar uno nuevo
+                MessageBox.Show("Por favor ingresa todos los datos del proveedor.");
+                return;
+            }
+
+            // Crear una nueva instancia del proveedor
+            var nuevoProveedor = new Proveedor
+            {
+                NombreEmpresa = txtNombreEmpresa.Text,
+                Contacto = txtContacto.Text,
+                Telefono = txtTelefono.Text,
+                Direccion = txtDireccion.Text
+            };
+
+            // Agregar el nuevo proveedor al contexto
+            _context.Proveedores.Add(nuevoProveedor);
+
+            try
+            {
+                // Guardar los cambios en la base de datos
+                _context.SaveChanges();
+
+                // Limpiar los campos de texto
+                txtNombreEmpresa.Clear();
+                txtContacto.Clear();
+                txtTelefono.Clear();
+                txtDireccion.Clear();
+
+                // Recargar los proveedores en el DataGridView
                 CargarProveedores();
+
+                MessageBox.Show("Proveedor agregado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                // Si ocurre un error, mostrar un mensaje
+                MessageBox.Show($"Error al agregar proveedor: {ex.Message}");
             }
         }
 
@@ -98,19 +135,35 @@ namespace Inventario.Views
 
         private void button3editarproductos_Click(object sender, EventArgs e)
         {
-            //boton para editar proveedores
             if (dataGridView2.SelectedRows.Count > 0)
             {
+                // Obtener el ID del proveedor seleccionado
                 int idProveedor = (int)dataGridView2.SelectedRows[0].Cells["ID"].Value;
-                var proveedor = _context.Proveedores.Find(idProveedor);
 
+                var proveedor = _context.Proveedores.Find(idProveedor);
                 if (proveedor != null)
                 {
-                    var editarProveedorForm = new EditarProveedorForm();
-                    if (editarProveedorForm.ShowDialog() == DialogResult.OK)
+                    // Cuando el usuario edita los datos y hace clic en el botón Guardar
+                    // Guardamos los cambios realizados en los campos de texto
+                    proveedor.NombreEmpresa = txtNombreEmpresa.Text;
+                    proveedor.Contacto = txtContacto.Text;
+                    proveedor.Telefono = txtTelefono.Text;
+                    proveedor.Direccion = txtDireccion.Text;
+
+                    try
                     {
-                        _context.SaveChanges(); // Guardar los cambios en la base de datos
-                        CargarProveedores(); // Recargar la lista de proveedores después de editar
+                        // Guardar los cambios en la base de datos
+                        _context.SaveChanges();
+
+                        // Recargar la lista de proveedores después de editar
+                        CargarProveedores();
+
+                        MessageBox.Show("Proveedor editado correctamente.");
+                    }
+                    catch (Exception ex)
+                    {
+                        // Si ocurre un error, mostrar un mensaje
+                        MessageBox.Show($"Error al editar proveedor: {ex.Message}");
                     }
                 }
                 else
@@ -125,6 +178,11 @@ namespace Inventario.Views
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtNombreEmpresa_TextChanged(object sender, EventArgs e)
         {
 
         }
