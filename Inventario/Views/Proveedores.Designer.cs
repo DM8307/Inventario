@@ -41,6 +41,16 @@
             direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             productosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             proveedorBindingSource = new BindingSource(components);
+            txtProductos = new TextBox();
+            lblProductos = new Label();
+            txtDireccion = new TextBox();
+            lblDireccion = new Label();
+            txtTelefono = new TextBox();
+            lblTelefono = new Label();
+            txtContacto = new TextBox();
+            lblContacto = new Label();
+            txtNombreEmpresa = new TextBox();
+            lblNombreEmpresa = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proveedorBindingSource).BeginInit();
             SuspendLayout();
@@ -49,7 +59,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 39);
+            label1.Location = new Point(12, 18);
             label1.Name = "label1";
             label1.Size = new Size(190, 40);
             label1.TabIndex = 10;
@@ -106,7 +116,7 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { nombreEmpresaDataGridViewTextBoxColumn, contactoDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, productosDataGridViewTextBoxColumn });
             dataGridView2.DataSource = proveedorBindingSource;
-            dataGridView2.Location = new Point(14, 99);
+            dataGridView2.Location = new Point(14, 78);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(543, 269);
             dataGridView2.TabIndex = 11;
@@ -146,11 +156,101 @@
             // 
             proveedorBindingSource.DataSource = typeof(Models.Proveedor);
             // 
+            // txtProductos
+            // 
+            txtProductos.Location = new Point(629, 307);
+            txtProductos.Name = "txtProductos";
+            txtProductos.Size = new Size(137, 23);
+            txtProductos.TabIndex = 27;
+            // 
+            // lblProductos
+            // 
+            lblProductos.AutoSize = true;
+            lblProductos.Location = new Point(672, 289);
+            lblProductos.Name = "lblProductos";
+            lblProductos.Size = new Size(61, 15);
+            lblProductos.TabIndex = 26;
+            lblProductos.Text = "Productos";
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(629, 248);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(137, 23);
+            txtDireccion.TabIndex = 25;
+            // 
+            // lblDireccion
+            // 
+            lblDireccion.AutoSize = true;
+            lblDireccion.Location = new Point(672, 230);
+            lblDireccion.Name = "lblDireccion";
+            lblDireccion.Size = new Size(57, 15);
+            lblDireccion.TabIndex = 24;
+            lblDireccion.Text = "Direccion";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(629, 190);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(137, 23);
+            txtTelefono.TabIndex = 23;
+            // 
+            // lblTelefono
+            // 
+            lblTelefono.AutoSize = true;
+            lblTelefono.Location = new Point(669, 172);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new Size(53, 15);
+            lblTelefono.TabIndex = 22;
+            lblTelefono.Text = "Telefono";
+            // 
+            // txtContacto
+            // 
+            txtContacto.Location = new Point(629, 134);
+            txtContacto.Name = "txtContacto";
+            txtContacto.Size = new Size(137, 23);
+            txtContacto.TabIndex = 21;
+            // 
+            // lblContacto
+            // 
+            lblContacto.AutoSize = true;
+            lblContacto.Location = new Point(669, 116);
+            lblContacto.Name = "lblContacto";
+            lblContacto.Size = new Size(56, 15);
+            lblContacto.TabIndex = 20;
+            lblContacto.Text = "Contacto";
+            // 
+            // txtNombreEmpresa
+            // 
+            txtNombreEmpresa.Location = new Point(629, 78);
+            txtNombreEmpresa.Name = "txtNombreEmpresa";
+            txtNombreEmpresa.Size = new Size(137, 23);
+            txtNombreEmpresa.TabIndex = 19;
+            // 
+            // lblNombreEmpresa
+            // 
+            lblNombreEmpresa.AutoSize = true;
+            lblNombreEmpresa.Location = new Point(649, 60);
+            lblNombreEmpresa.Name = "lblNombreEmpresa";
+            lblNombreEmpresa.Size = new Size(99, 15);
+            lblNombreEmpresa.TabIndex = 18;
+            lblNombreEmpresa.Text = "Nombre Empresa";
+            // 
             // Proveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 456);
+            Controls.Add(txtProductos);
+            Controls.Add(lblProductos);
+            Controls.Add(txtDireccion);
+            Controls.Add(lblDireccion);
+            Controls.Add(txtTelefono);
+            Controls.Add(lblTelefono);
+            Controls.Add(txtContacto);
+            Controls.Add(lblContacto);
+            Controls.Add(txtNombreEmpresa);
+            Controls.Add(lblNombreEmpresa);
             Controls.Add(dataGridView2);
             Controls.Add(label1);
             Controls.Add(button4Volver_a_inicio);
@@ -179,5 +279,15 @@
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn productosDataGridViewTextBoxColumn;
+        private TextBox txtProductos;
+        private Label lblProductos;
+        private TextBox txtDireccion;
+        private Label lblDireccion;
+        private TextBox txtTelefono;
+        private Label lblTelefono;
+        private TextBox txtContacto;
+        private Label lblContacto;
+        private TextBox txtNombreEmpresa;
+        private Label lblNombreEmpresa;
     }
 }

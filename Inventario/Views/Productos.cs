@@ -45,7 +45,7 @@ namespace Inventario.Views
         {
             //boton para agregar productos
             // Mostrar un formulario o cuadro de entrada para agregar productos
-            var agregarForm = new AgregarProductoForm(); 
+            var agregarForm = new AgregarProductoForm();
             if (agregarForm.ShowDialog() == DialogResult.OK)
             {
                 CargarProductos(); // Recargar los productos después de agregar
@@ -75,7 +75,7 @@ namespace Inventario.Views
             }
         }
 
-        
+
 
         private void button3editarproductos_Click(object sender, EventArgs e)
         {
@@ -88,7 +88,7 @@ namespace Inventario.Views
 
                 if (producto != null)
                 {
-                    var editarForm = new EditarProductoForm(); 
+                    var editarForm = new EditarProductoForm();
                     if (editarForm.ShowDialog() == DialogResult.OK)
                     {
                         CargarProductos(); // Recargar los productos después de editar
@@ -110,6 +110,16 @@ namespace Inventario.Views
         {
             // Volver al menú principal
             this.Close(); // Cierra el formulario de productos
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

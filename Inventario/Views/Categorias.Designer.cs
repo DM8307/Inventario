@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            btnAgregar = new Button();
-            btnEliminar = new Button();
-            btnEditar = new Button();
-            button4 = new Button();
             dtgvCategorias = new DataGridView();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descripcionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -46,49 +42,14 @@
             lblNombre = new Label();
             txtProductos = new TextBox();
             lblProductos = new Label();
+            button3editarproductos = new Button();
+            button2eliminarproductos = new Button();
+            button1agregarproductos = new Button();
+            button4Volver_a_inicio = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvCategorias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)categoriaBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)categoriaBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Location = new Point(51, 378);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(152, 60);
-            btnAgregar.TabIndex = 0;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += button1_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(209, 378);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(152, 60);
-            btnEliminar.TabIndex = 1;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += button2_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Location = new Point(367, 378);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(152, 60);
-            btnEditar.TabIndex = 2;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(636, 378);
-            button4.Name = "button4";
-            button4.Size = new Size(152, 60);
-            button4.TabIndex = 3;
-            button4.Text = "Volver a inicio";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // dtgvCategorias
             // 
@@ -190,11 +151,56 @@
             lblProductos.TabIndex = 15;
             lblProductos.Text = "Productos";
             // 
+            // button3editarproductos
+            // 
+            button3editarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3editarproductos.Location = new Point(373, 378);
+            button3editarproductos.Name = "button3editarproductos";
+            button3editarproductos.Size = new Size(158, 70);
+            button3editarproductos.TabIndex = 19;
+            button3editarproductos.Text = "Editar";
+            button3editarproductos.UseVisualStyleBackColor = true;
+            // 
+            // button2eliminarproductos
+            // 
+            button2eliminarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2eliminarproductos.Location = new Point(209, 378);
+            button2eliminarproductos.Name = "button2eliminarproductos";
+            button2eliminarproductos.Size = new Size(158, 70);
+            button2eliminarproductos.TabIndex = 18;
+            button2eliminarproductos.Text = "Eliminar";
+            button2eliminarproductos.UseVisualStyleBackColor = true;
+            // 
+            // button1agregarproductos
+            // 
+            button1agregarproductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1agregarproductos.Location = new Point(45, 378);
+            button1agregarproductos.Name = "button1agregarproductos";
+            button1agregarproductos.Size = new Size(158, 70);
+            button1agregarproductos.TabIndex = 17;
+            button1agregarproductos.Text = "Agregar";
+            button1agregarproductos.UseVisualStyleBackColor = true;
+            // 
+            // button4Volver_a_inicio
+            // 
+            button4Volver_a_inicio.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4Volver_a_inicio.Location = new Point(630, 402);
+            button4Volver_a_inicio.Name = "button4Volver_a_inicio";
+            button4Volver_a_inicio.Size = new Size(158, 36);
+            button4Volver_a_inicio.TabIndex = 20;
+            button4Volver_a_inicio.Text = "Volver a inicio";
+            button4Volver_a_inicio.UseVisualStyleBackColor = true;
+            button4Volver_a_inicio.Click += button4Volver_a_inicio_Click;
+            // 
             // Categorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4Volver_a_inicio);
+            Controls.Add(button3editarproductos);
+            Controls.Add(button2eliminarproductos);
+            Controls.Add(button1agregarproductos);
             Controls.Add(txtProductos);
             Controls.Add(lblProductos);
             Controls.Add(lblNombre);
@@ -203,10 +209,6 @@
             Controls.Add(txtNombre);
             Controls.Add(label1);
             Controls.Add(dtgvCategorias);
-            Controls.Add(button4);
-            Controls.Add(btnEditar);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnAgregar);
             Name = "Categorias";
             Text = ".";
             Load += Categorias_Load;
@@ -218,11 +220,6 @@
         }
 
         #endregion
-
-        private Button btnAgregar;
-        private Button btnEliminar;
-        private Button btnEditar;
-        private Button button4;
         private DataGridView dtgvCategorias;
         private BindingSource categoriaBindingSource;
         private Label label1;
@@ -236,5 +233,9 @@
         private TextBox txtProductos;
         private Label lblProductos;
         private BindingSource categoriaBindingSource1;
+        private Button button3editarproductos;
+        private Button button2eliminarproductos;
+        private Button button1agregarproductos;
+        private Button button4Volver_a_inicio;
     }
 }

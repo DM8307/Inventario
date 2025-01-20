@@ -44,6 +44,18 @@
             button3editarproductos = new Button();
             button4Volver_a_inicio = new Button();
             label1 = new Label();
+            lblNombre = new Label();
+            txtNombre = new TextBox();
+            txtCodigo = new TextBox();
+            lblCodigo = new Label();
+            txtPrecio = new TextBox();
+            lblPrecio = new Label();
+            txtExistencia = new TextBox();
+            lblExistencia = new Label();
+            textBox1 = new TextBox();
+            lblCategoria = new Label();
+            textBox2 = new TextBox();
+            lblProveedor = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)inventarioContextBindingSource1).BeginInit();
@@ -166,11 +178,121 @@
             label1.Text = "Productos";
             label1.Click += label1_Click;
             // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(732, 29);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(51, 15);
+            lblNombre.TabIndex = 6;
+            lblNombre.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(689, 47);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(137, 23);
+            txtNombre.TabIndex = 7;
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.Location = new Point(689, 103);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(137, 23);
+            txtCodigo.TabIndex = 9;
+            // 
+            // lblCodigo
+            // 
+            lblCodigo.AutoSize = true;
+            lblCodigo.Location = new Point(732, 85);
+            lblCodigo.Name = "lblCodigo";
+            lblCodigo.Size = new Size(46, 15);
+            lblCodigo.TabIndex = 8;
+            lblCodigo.Text = "Codigo";
+            lblCodigo.Click += label2_Click;
+            // 
+            // txtPrecio
+            // 
+            txtPrecio.Location = new Point(689, 159);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(137, 23);
+            txtPrecio.TabIndex = 11;
+            // 
+            // lblPrecio
+            // 
+            lblPrecio.AutoSize = true;
+            lblPrecio.Location = new Point(738, 141);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(40, 15);
+            lblPrecio.TabIndex = 10;
+            lblPrecio.Text = "Precio";
+            // 
+            // txtExistencia
+            // 
+            txtExistencia.Location = new Point(689, 217);
+            txtExistencia.Name = "txtExistencia";
+            txtExistencia.Size = new Size(137, 23);
+            txtExistencia.TabIndex = 13;
+            // 
+            // lblExistencia
+            // 
+            lblExistencia.AutoSize = true;
+            lblExistencia.Location = new Point(732, 199);
+            lblExistencia.Name = "lblExistencia";
+            lblExistencia.Size = new Size(58, 15);
+            lblExistencia.TabIndex = 12;
+            lblExistencia.Text = "Existencia";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(689, 276);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(137, 23);
+            textBox1.TabIndex = 15;
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(732, 258);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(58, 15);
+            lblCategoria.TabIndex = 14;
+            lblCategoria.Text = "Categoria";
+            lblCategoria.Click += label2_Click_1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(689, 332);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(137, 23);
+            textBox2.TabIndex = 17;
+            // 
+            // lblProveedor
+            // 
+            lblProveedor.AutoSize = true;
+            lblProveedor.Location = new Point(729, 314);
+            lblProveedor.Name = "lblProveedor";
+            lblProveedor.Size = new Size(61, 15);
+            lblProveedor.TabIndex = 16;
+            lblProveedor.Text = "Proveedor";
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 457);
+            Controls.Add(textBox2);
+            Controls.Add(lblProveedor);
+            Controls.Add(textBox1);
+            Controls.Add(lblCategoria);
+            Controls.Add(txtExistencia);
+            Controls.Add(lblExistencia);
+            Controls.Add(txtPrecio);
+            Controls.Add(lblPrecio);
+            Controls.Add(txtCodigo);
+            Controls.Add(lblCodigo);
+            Controls.Add(txtNombre);
+            Controls.Add(lblNombre);
             Controls.Add(label1);
             Controls.Add(button4Volver_a_inicio);
             Controls.Add(button3editarproductos);
@@ -204,5 +326,17 @@
         private DataGridViewTextBoxColumn existenciaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
+        private Label lblNombre;
+        private TextBox txtNombre;
+        private TextBox txtCodigo;
+        private Label lblCodigo;
+        private TextBox txtPrecio;
+        private Label lblPrecio;
+        private TextBox txtExistencia;
+        private Label lblExistencia;
+        private TextBox textBox1;
+        private Label lblCategoria;
+        private TextBox textBox2;
+        private Label lblProveedor;
     }
 }

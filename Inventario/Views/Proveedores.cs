@@ -57,7 +57,7 @@ namespace Inventario.Views
         private void button4Volver_a_inicio_Click(object sender, EventArgs e)
         {
             // Volver al menú principal
-            this.Close(); // Cierra el formulario de productos
+            this.Close(); // Cierra el formulario de proveedores
         }
 
         private void button1agregarproductos_Click(object sender, EventArgs e)
