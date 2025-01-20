@@ -5,3 +5,4 @@
 /.vs
 /Inventario/bin/Debug/net9.0-windows
 /Inventario/obj
+/Inventario/Properties/DataSources
