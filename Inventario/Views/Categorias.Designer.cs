@@ -180,6 +180,7 @@
             button1agregarproductos.TabIndex = 17;
             button1agregarproductos.Text = "Agregar";
             button1agregarproductos.UseVisualStyleBackColor = true;
+            button1agregarproductos.Click += button1agregarproductos_Click;
             // 
             // button4Volver_a_inicio
             // 
